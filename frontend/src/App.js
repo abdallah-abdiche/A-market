@@ -10,6 +10,8 @@ import Login from "./pages/Login";
 import DelivryPage from "./pages/DelivryPage";
 import Saved from "./pages/Saved.jsx";
 import Settings from "./pages/Settings";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -18,6 +20,13 @@ import Settings from "./pages/Settings";
 function App() {
   return (
     <div>
+        <ToastContainer
+            position="top-right"
+            autoClose={1500}
+            pauseOnHover
+            theme="colored"
+
+        />
             <BrowserRouter>
 
 

@@ -1,8 +1,17 @@
 import React from 'react';
 import { IoIosFlash } from "react-icons/io";
 import { FaGift } from "react-icons/fa";
+import { toast } from 'react-toastify';
 
 export function OffersCard(props) {
+    const notify = () => {
+        toast.success("Item Added to cart Successfully!", {
+            style: {
+                backgroundColor: '#4CAF50',
+                color: 'white'
+            }
+        });
+    };
 
     function AddToCart(id, index) {
         alert(`Item ID: ${id}, Index: ${index}`);
@@ -192,7 +201,12 @@ export function OffersCard(props) {
                                 marginRight: '16px',
                             }}>
                                 <h5 style={{ margin: '0 0 0px 0' }}>{title[i]}</h5>
-                                <button onClick={() => AddToCart(`${props.id}`, i)} style={{
+                                <button
+                                    onClick={() => {
+                                    AddToCart(`${props.id}`, i);
+                                    notify();
+                                }}
+                                        style={{
                                     borderRadius: '15px',
                                     height: '30px',
                                     width: '70px',

@@ -1,7 +1,18 @@
 import React from 'react'
 import { IoIosFlash } from "react-icons/io";
+import { toast } from 'react-toastify';
 
-const FlashSalesCard = ({item}) => {
+const FlashSalesCard = ({ item}) => {
+    const notify = () => {
+
+        toast.success("item was added to cart", {
+            style: {
+                backgroundColor: '#4CAF50',
+                color: 'white'
+            }
+        });
+    };
+
 
         return (
             <div className="ContainerCard">
@@ -32,7 +43,7 @@ const FlashSalesCard = ({item}) => {
                     <div className='Prices'>
                         <p style={{position:'relative',top:'-10px'}}>Now ${item.price}</p>
                         <p style={{color:'grey',textDecoration:'line-through',position:'relative',top:'-10px'}}> ${item.oldprice}</p>
-                        <button style={{width:'70px',height:'30px',position:'relative',borderRadius:'20px',border:'none'}}> Add </button>
+                        <button style={{width:'70px',height:'30px',position:'relative',borderRadius:'20px',border:'none'}} onClick={notify}> Add </button>
                     </div>
                     <div className="Sold">
                         <div>
@@ -52,6 +63,7 @@ const FlashSalesCard = ({item}) => {
             </div>
         )
     }
+
 
 
     export default FlashSalesCard
