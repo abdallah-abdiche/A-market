@@ -5,7 +5,9 @@ import './Recommendation.css';
 import { FaChevronLeft,FaChevronRight } from "react-icons/fa6";
 import {FaRegHeart} from "react-icons/fa";
 
+
 const Recommendations = () => {
+
     const cardWidth = 200;
     const gap = 48;
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -39,7 +41,7 @@ const Recommendations = () => {
 
     return (
         <div className="recommendations">
-            <h2 style={{ fontSize: '25px', marginBottom: '1.5rem', marginTop: '1.5rem' }}>
+            <h2 style={{ fontSize: '25px', marginBottom: '1.5rem', marginTop: '1.5rem',marginLeft: '1rem' }}>
                 <FaRegHeart style={{fontWeight:'bold',position:'relative',top:'3px'}}/> Recommendations
             </h2>
 
@@ -52,11 +54,12 @@ const Recommendations = () => {
                     disabled={currentIndex === 0}
                     style={{
                         position: 'absolute',
-                        left: '-30px',
-                        top: '27%',
+                        top: '25%',
+                        left:'-22px',
                         transform: 'translateY(-50%)',
                         zIndex: 2,
                     }}
+
                 >
                     <FaChevronLeft  style={{color:'#303030',fontSize:'15px',fontWeight:'bold'}}/>
                 </button>
@@ -68,6 +71,7 @@ const Recommendations = () => {
                         width: '100%',
                         justifyContent: 'flex-start',
                         paddingBottom: '3rem',
+
                     }}
                 >
                     <div
@@ -92,7 +96,7 @@ const Recommendations = () => {
                     style={{
                         position: 'absolute',
                         right: '-20px',
-                        top: '27%',
+                        top: '25%',
                         transform: 'translateY(-50%)',
                         zIndex: 2,
                     }}

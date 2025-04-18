@@ -1,0 +1,16 @@
+.blur-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(2px);
+    background-color: rgba(32, 30, 30, 0.64);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 9997;
+    pointer-events: none;
+}
+.navbar-left:hover + .blur-overlay {
+    opacity: 1;
+}

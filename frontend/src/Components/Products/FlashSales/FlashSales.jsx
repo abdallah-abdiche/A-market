@@ -6,6 +6,12 @@ import { IoIosFlash } from "react-icons/io";
 import { FaChevronLeft,FaChevronRight } from "react-icons/fa6";
 
 const FlashSales = () => {
+    const [cart, setCart] = useState([]);
+
+    const handleAddToCart = (product) => {
+        setCart(prevCart => [...prevCart, product]);
+    };
+
     const cardWidth = 200;
     const gap = 48;
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -58,8 +64,8 @@ const FlashSales = () => {
                     disabled={currentIndex === 0}
                     style={{
                         position: 'absolute',
-                        left: '-30px',
-                        top: '27%',
+                        top: '25%',
+                        left:'-22px',
                         transform: 'translateY(-50%)',
                         zIndex: 2,
                     }}
@@ -75,6 +81,7 @@ const FlashSales = () => {
                         width: '100%',
                         justifyContent: 'flex-start',
                         paddingBottom: '3rem',
+
                     }}
                 >
                     <div
@@ -98,7 +105,7 @@ const FlashSales = () => {
                     style={{
                         position: 'absolute',
                         right: '-20px',
-                        top: '27%',
+                        top: '25%',
                         transform: 'translateY(-50%)',
                         zIndex: 2,
                     }}

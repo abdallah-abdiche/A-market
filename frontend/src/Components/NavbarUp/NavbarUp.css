@@ -98,8 +98,8 @@
 
 #notification{
     color: white;
-    width: 2.2rem;
-    height: 2.2rem;
+    width: 30px;
+    height: 30px;
     position: relative;
     top:2px;
 }
@@ -134,8 +134,8 @@ input:focus{
 }
 #account-icon{
     color: white;
-    width: 2rem;
-    height: 2rem;
+    width: 30px;
+    height: 30px;
     position: relative;
     top:2px;
     z-index: 999;

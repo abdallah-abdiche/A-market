@@ -8,8 +8,8 @@ const RecommendationData =[
         Sold: 1.5,
         Comment:'All most sold out',
         description: "4pcs Universal Algerian Vintage",
-        price:'70',
-        oldprice:'80',
+        price:'700',
+        oldprice:'800',
         Stars:'★★★☆☆',
         Statistiques:442,
 
