@@ -11,6 +11,7 @@ import { BsQuestionOctagon } from "react-icons/bs";
 import { RiSettingsLine } from "react-icons/ri";
 
 import LogoImg from "../Assets/logo.png";
+import Chat from "../../pages/Chat";
 
 const NavbarLeft = () => {
     return (
@@ -23,7 +24,7 @@ const NavbarLeft = () => {
                 <div className="icons">
                 <a href="/"><MdOutlineExplore id="Explore" /><span>Explore</span></a>
                 <a href="/Card"><PiShoppingCartSimpleBold id="shoppingCart" /><span>Cart</span></a>
-                <a href="#"><PiUsersBold id="friends" /><span>Chat</span></a>
+                <a href="/Chat"><PiUsersBold id="friends" /><span>Chat</span></a>
                 <a href="/Delivry"><TbTruckDelivery id="Deliveries" /><span>Deliveries</span></a>
                 <a href="#"><LuMenu id="menu" /><span>Menu</span></a>
                 <a href="/saved"><FaRegBookmark id="Bookmark" /><span>Bookmark</span></a>
