@@ -7,6 +7,7 @@ import ShopCategory from "./pages/ShopCategory";
 import Product from "./pages/Product";
 import CardPage from "./pages/CardPage";
 import Login from "./pages/Login";
+import Chat from "./pages/Chat";
 import DelivryPage from "./pages/DelivryPage";
 import Saved from "./pages/Saved.jsx";
 import Settings from "./pages/Settings";
@@ -42,6 +43,7 @@ function App() {
 
                     <Route path="/Card" element={<CardPage/>}/>
                     <Route path="/Login" element={<Login/>}/>
+                        <Route path="/Login" element={<Chat/>}/>
                     <Route path="/Delivry" element={<DelivryPage/>}/>
                     <Route path="/Saved" element={<Saved/>}/>
                     <Route path="/Settings" element={<Settings/>}/>
