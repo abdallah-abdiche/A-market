@@ -1,0 +1,28 @@
+.CardPage{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+    width: 100%;
+    height: 100vh;
+   font-family: "Plus Jakarta";
+
+}
+#mytitle{
+    font-family: "Plus Jakarta Sans";
+    font-size: 4rem;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+
+}
+
+.CartProduct{
+    font-family: "Plus Jakarta Sans";
+    padding-left: 20%;
+    width: 100%;
+}
+#cards h4, #cards p{
+    font-family: "Plus Jakarta Sans";
+}

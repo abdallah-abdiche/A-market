@@ -1,18 +1,20 @@
 import React from 'react'
 import { IoIosFlash } from "react-icons/io";
 import { toast } from 'react-toastify';
+import { useCart } from '../../../Context/CartContext';
 
 const FlashSalesCard = ({ item}) => {
-    const notify = () => {
+    const {addToCart} = useCart();
 
-        toast.success("item was added to cart", {
+    const handleAddToCart = () => {
+        addToCart(item);
+        toast.success("Item added to cart!", {
             style: {
-                backgroundColor: '#4CAF50',
+                backgroundImage: 'linear-gradient(140deg, #6b6c6c, #2A2D33)',
                 color: 'white'
             }
         });
     };
-
 
         return (
             <div className="ContainerCard">
@@ -43,7 +45,7 @@ const FlashSalesCard = ({ item}) => {
                     <div className='Prices'>
                         <p style={{position:'relative',top:'-10px'}}>Now ${item.price}</p>
                         <p style={{color:'grey',textDecoration:'line-through',position:'relative',top:'-10px'}}> ${item.oldprice}</p>
-                        <button style={{width:'70px',height:'30px',position:'relative',borderRadius:'20px',border:'none'}} onClick={notify}> Add </button>
+                        <button style={{width:'70px',height:'30px',position:'relative',borderRadius:'20px',border:'none'}} onClick={handleAddToCart}> Add </button>
                     </div>
                     <div className="Sold">
                         <div>
@@ -66,4 +68,4 @@ const FlashSalesCard = ({ item}) => {
 
 
 
-    export default FlashSalesCard
+    export default FlashSalesCard;
