@@ -65,3 +65,86 @@
         font-weight: bold;
         font-size: 14px;
 }
+/* Small screens - phones */
+@media screen and (max-width: 600px) {
+
+
+                .Reminder {
+                        width: 90%;
+                        margin: 30px auto;
+                        font-size: 13px;
+                        height: auto;
+                        padding: 15px;
+                        text-align: center;
+                        border-radius: 8px;
+                }
+
+                .Choosing {
+                        height: auto;
+                        padding: 15px 10px;
+                        margin: 0 auto;
+                        background-color: #25282d; /* in case you want to preserve it */
+                }
+
+                .Choosingcont {
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        width: 100%;
+                        gap: 20px;
+                }
+
+                .Security {
+                        width: 100%;
+                        flex-direction: column;
+                        align-items: center;
+                        gap: 15px;
+                }
+
+                .Security div {
+                        width: 90%;
+                        border: none;
+                        border-bottom: 1px solid white;
+                        padding: 10px 0;
+                        text-align: center;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                }
+
+                .More {
+                        width: 90%;
+                        margin: 20px auto;
+                        padding: 15px 10px;
+                        font-size: 13px;
+                        text-align: center;
+                }
+
+                .Friendlycont {
+                        flex-direction: column;
+                        width: 90%;
+                        margin: 0 auto;
+                        gap: 15px;
+                        text-align: center;
+                }
+
+                .Friendlycont a {
+                        font-size: 13px;
+                        display: block;
+                }
+        }
+
+
+
+
+        @media screen and (max-width: 992px) {
+        .Security {
+                width: 80%;
+                gap: 20px;
+        }
+
+        .Choosingcont, .Friendlycont {
+                flex-wrap: wrap;
+                justify-content: center;
+        }
+}

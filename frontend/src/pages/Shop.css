@@ -14,3 +14,6 @@
 .navbar-left:hover + .blur-overlay {
     opacity: 1;
 }
+@media (max-width: 390px){
+    overflow: hidden;
+}

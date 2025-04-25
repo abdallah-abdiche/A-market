@@ -11,28 +11,55 @@ import Recommendations from "../Components/Products/Recommendations/Recommendati
 import BigSaves from "../Components/Products/BigSaves/BigSaves";
 import FlashSales from "../Components/Products/FlashSales/FlashSales";
 import ProductsFilter from "../Components/Products/Allproducts/ProductsFilter";
+import FadeInSection from "../Components/FadeInSection";
 
 
 
 const Shop = () => {
     return (
 
+
         <div>
+
+
             <NavbarLeft style={{zIndex: '100 !important'}}/>
+
             <div className="blur-overlay"></div>
             <NavbarUp/>
             <BelowNav/>
+            <FadeInSection delay={0.2}>
             <Banner/>
+            </FadeInSection >
+
+            <FadeInSection delay={0.2}>
             <Offers/>
+            </FadeInSection>
+
             <Reminder/>
+
+           < FadeInSection delay={0.1}>
             <Recommendations/>
+           </FadeInSection>
+
+            < FadeInSection delay={0.1}>
             <FlashSales/>
+            </FadeInSection>
+
+            < FadeInSection delay={0.1}>
             <BigSaves/>
+            </FadeInSection>
+
+                < FadeInSection delay={0.1}>
             <ProductsFilter/>
+                </FadeInSection>
+
+                    < FadeInSection delay={0.1}>
             <Footer/>
+                    </FadeInSection>
 
 
         </div>
+
 
     )
 }

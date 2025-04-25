@@ -2,20 +2,32 @@ import React from 'react';
 import { IoIosFlash } from "react-icons/io";
 import { FaGift } from "react-icons/fa";
 import { toast } from 'react-toastify';
+import {useCart} from "../../Context/CartContext";
 
 export function OffersCard(props) {
-    const notify = () => {
-        toast.success("Item Added to cart Successfully!", {
+    const { addToCart } = useCart();
+
+    const handleAddToCart = (index) => {
+        addToCart({
+            id: `${props.id}-${index}`,
+            category : props.category[index],
+            title: props.title[index],
+            image: props.image[index],
+            countdown: props.countdown?.[index],
+            saves: props.saves?.[index],
+
+            price: props.price?.[index],
+        });
+
+        toast.success("Item added to cart!", {
             style: {
-                backgroundColor: '#4CAF50',
+                backgroundImage: 'linear-gradient(140deg, #6b6c6c, #2A2D33)',
                 color: 'white'
             }
         });
     };
 
-    function AddToCart(id, index) {
-        alert(`Item ID: ${id}, Index: ${index}`);
-    }
+
 
     const {
         category,
@@ -47,13 +59,12 @@ export function OffersCard(props) {
                 }}>
                     {[0, 1].map((i) => (
                         <img
+                            className={'image'}
                             key={i}
                             id={i}
                             src={image[i]}
                             alt={`Offers-img-${i}`}
                             style={{
-                                width: '160px',
-                                height: '160px',
                                 borderRadius: '10px',
                                 objectFit: 'cover'
                             }}
@@ -202,10 +213,8 @@ export function OffersCard(props) {
                             }}>
                                 <h5 style={{ margin: '0 0 0px 0' }}>{title[i]}</h5>
                                 <button
-                                    onClick={() => {
-                                    AddToCart(`${props.id}`, i);
-                                    notify();
-                                }}
+                                    onClick={() => handleAddToCart(i)}
+
                                         style={{
                                     borderRadius: '15px',
                                     height: '30px',
@@ -228,5 +237,7 @@ export function OffersCard(props) {
                 </div>
             </div>
         </div>
-    );
+    )
 }
+
+    export default OffersCard

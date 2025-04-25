@@ -71,6 +71,31 @@
     position: relative;
 
 }
+.navbar-left:hover #counter{
+    position: absolute;
+    width:18px;
+    height:18px;
+    align-items: center;
+    text-align:center;
+    justify-content: center;
+    top: -15px;
+    right: 115px;
+}
+#counter{
+    position: absolute;
+    width:18px;
+    height:18px;
+    align-items: center;
+    text-align:center;
+    justify-content: center;
+    top: -15px;
+    right: 30px;
+    background: red;
+    color: white;
+    border-radius: 50%;
+    font-size: 14px;
+    line-height: 1;
+}
 
 .navbar-left a span {
 
@@ -129,71 +154,36 @@
     width: 23px;
     height: 23px;
     cursor: pointer;
-
 }
-
-/* === RESPONSIVE STYLES === */
-@media (max-width: 490px) {
-    .logoImg, #menu, #shoppingCart {
-        position: relative;
-    }
-
-    .logoImg {
-        width: 35px !important;
-        height: 35px !important;
-        position: fixed;
-        top: 12px;
-        left: 34px;
-    }
-
-    #menu {
-        position: fixed;
-        left: 12px;
-        top: 19px;
-        width: 16px;
-    }
-
-    #shoppingCart {
-        position: fixed;
-        right: 17%;
-        top: 25px;
-        width: 25px;
-        height: 25px;
-    }
-
-    #ligne, #Deliveries, #Bookmark,
-    #moon, #question, #settings,
-    #friends, #Explore {
+@media screen and (max-width: 768px) {
+    .navbar-left {
         display: none;
-    }
-}
-
-@media (min-width: 490px) and (max-width: 860px) {
-    #Explore {
-        width: 20px;
-        height: 20px;
+        position: fixed;
+        width: 60%;
+        height: 100%;
+        z-index: 10000;
+        background: linear-gradient(to top, rgb(37, 40, 45), rgb(37, 40, 46));
     }
 
-    #Deliveries, #menu, #Bookmark,
-    #moon, #question, #settings,
-    #shoppingCart, #friends {
-        width: 18px;
-        height: 18px;
+    .navbar-left.active {
+        display: flex; /* show when toggled */
     }
 
-    .Container-icones {
-        margin-top: 10px;
-        margin-bottom: 360px;
-        justify-content: space-between;
+    .menu-toggle {
+        display: flex;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 11000;
+        gap: 20px;
+        align-items: center;
     }
 
-    #ligne {
-        width: 30px;
-    }
-
-    .logoImg {
-        width: 30px;
-        height: 30px !important;
+    #menu,
+    #shoppingCart {
+        color: white;
+        font-size: 24px;
+        cursor: pointer;
     }
 }
 

@@ -1,14 +1,18 @@
 import React from 'react';
 import { FaGift } from "react-icons/fa";
 import { toast } from 'react-toastify';
+import { useCart } from '../../../Context/CartContext';
 
 const BigSavesCard = ({ item }) => {
 
 
-    const notify = () => {
-        toast.success("Item Added to cart Successfully!", {
+    const { addToCart } = useCart();
+
+    const handleAddToCart = () => {
+        addToCart(item);
+        toast.success("Item added to cart!", {
             style: {
-                backgroundColor: '#4CAF50',
+                backgroundImage: 'linear-gradient(140deg, #6b6c6c, #2A2D33)',
                 color: 'white'
             }
         });
@@ -67,7 +71,7 @@ const BigSavesCard = ({ item }) => {
                             borderRadius: '20px',
                             border: 'none'
                         }}
-                        onClick={notify}
+                        onClick={handleAddToCart}
                     >
                         Add
                     </button>
