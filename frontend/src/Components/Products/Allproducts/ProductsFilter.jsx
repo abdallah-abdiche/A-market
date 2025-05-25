@@ -1,68 +1,84 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef, forwardRef } from 'react';
+import { useLocation } from 'react-router-dom';
 import ProductCard from '../Recommendations/RecommendationCard';
 import productsData from './ProductsData';
 import './ProductsFilter.css';
 
-const ProductsFilter = () => {
-    const cardWidth = 200;
-    const gap = 48;
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const [cardsToShow, setCardsToShow] = useState(5);
+const ProductsFilter = forwardRef((props, ref) => {
+    const location = useLocation();
+    const params = new URLSearchParams(location.search);
+    const categoryFromUrl = params.get('category') || 'All';
+
+    const categories = ['All', ...new Set(productsData.map(p => p.category))];
+
+    const [selectedCategory, setSelectedCategory] = useState(categoryFromUrl);
     const [visibleMultiplier, setVisibleMultiplier] = useState(3);
-    const [selectedCategory, setSelectedCategory] = useState('All');
+    const [cardsToShow, setCardsToShow] = useState(5);
+    const productListRef = useRef(null);
 
-    const categories = ['All', ...new Set(productsData.map(product => product.category))];
+    useEffect(() => {
+        if (categoryFromUrl !== selectedCategory) {
+            setSelectedCategory(categoryFromUrl);
+            setVisibleMultiplier(3);
 
-    const filteredProducts = selectedCategory === 'All'
-        ? productsData
-        : productsData.filter(product => product.category === selectedCategory);
-
-    const visibleCount = cardsToShow * visibleMultiplier;
+            if (productListRef.current) {
+                productListRef.current.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    }, [categoryFromUrl]);
 
     useEffect(() => {
         const handleResize = () => {
             const width = window.innerWidth;
-            if (width < 500) setCardsToShow(1);
-            else if (width < 800) setCardsToShow(2);
+            if (width < 500) setCardsToShow(3);
             else if (width < 1124) setCardsToShow(3);
-            else if (width < 1300) setCardsToShow(4);
+            else if (width < 1400) setCardsToShow(4);
             else setCardsToShow(5);
         };
-
         handleResize();
         window.addEventListener('resize', handleResize);
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    const handleShowMore = () => {
-        setVisibleMultiplier(prev => prev + 1);
+    const visibleCount = cardsToShow * visibleMultiplier;
+
+    const handleCategoryClick = (category) => {
+        if (category === selectedCategory) return;
+        setSelectedCategory(category);
+        setVisibleMultiplier(3);
     };
 
+    const handleShowMore = () => {
+        setVisibleMultiplier((prev) => prev + 1);
+    };
+
+    const filteredProducts =
+        selectedCategory === 'All'
+            ? productsData
+            : productsData.filter((p) => p.category === selectedCategory);
+
     return (
-        <div className="categories-container">
-            <div>
-                <h2 style={{ fontSize: '30px', marginBottom: '3rem',marginTop:'3rem', color: 'white', fontWeight: 'bold', justifyContent: 'center', textAlign: 'center' }}>
+        <div className="categories-container" ref={ref}>
+            <div className="ProductstextC">
+                <h2 className="Productstext">
                     Special Offers
                     <br /> Explore Your Interests
                 </h2>
 
-                <div style={{ marginBottom: '3rem', display: 'flex', gap: '2rem', flexWrap: 'wrap',margin: '1rem auto 2rem auto', }}>
-                    {categories.map(category => (
+                <div className="ButtonesCategory">
+                    {categories.map((category) => (
                         <button
                             key={category}
-                            onClick={() => {
-                                setSelectedCategory(category);
-                                setVisibleMultiplier(3); // Reset view when changing category
-                            }}
+                            onClick={() => handleCategoryClick(category)}
                             style={{
-                                padding: '15px 30px',
+                                padding: '10px 35px',
                                 backgroundColor: selectedCategory === category ? '#ffffff' : '#272b30',
                                 color: selectedCategory === category ? '#0b0b0b' : '#d8cfe2',
                                 border: '2px solid #d8cfe2',
                                 borderRadius: '50px',
                                 cursor: 'pointer',
                                 fontWeight: 'bold',
-                                fontSize: '15px'
+                                fontSize: '15px',
                             }}
                         >
                             {category}
@@ -71,45 +87,38 @@ const ProductsFilter = () => {
                 </div>
             </div>
 
-            <div
-                className="flexing"
-                style={{
-                    display: 'flex',
-                    flexWrap: 'wrap',
-                    gap: `${gap}px`,
-                    justifyContent: 'center',
-                    maxWidth: '100%',
-                    marginTop: '2rem',
-                    boxSizing: 'border-box',
-                    alignItems: 'center',
-
-                }}
-            >
-                {filteredProducts.slice(0, visibleCount).map(product => (
-                    <ProductCard  key={product.id} item={product} />
+            <div className="flexingg" ref={productListRef}>
+                {filteredProducts.slice(0, visibleCount).map((product) => (
+                    <ProductCard key={product.id} item={product} />
                 ))}
             </div>
 
             {visibleCount < filteredProducts.length && (
                 <button
+                    className="seemore"
                     onClick={handleShowMore}
                     style={{
-                        marginTop: '3.5rem',
-                        marginBottom:'-1rem',
+                        marginTop: '1.5rem',
+                        marginBottom: '0.1rem',
                         padding: '12px 30px',
                         backgroundColor: '#ffffff',
                         color: '#1e2126',
                         fontWeight: 'bold',
                         borderRadius: '30px',
                         border: 'none',
-                        cursor: 'pointer'
+                        cursor: 'pointer',
                     }}
                 >
-                   See more <span style={{position:'relative',top:'-0.5px',right:'-2px',fontSize:'10px'}}>˅</span>
+                    See more{' '}
+                    <span
+                        style={{ position: 'relative', top: '-0.5px', right: '-2px', fontSize: '10px' }}
+                    >
+                        ˅
+                    </span>
                 </button>
             )}
         </div>
     );
-};
+});
 
 export default ProductsFilter;

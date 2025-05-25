@@ -1,9 +1,11 @@
-import React from 'react'
+import React,{NavLink} from 'react'
 import './Footer.css'
 import { RiFacebookLine } from "react-icons/ri";
 import { IoLogoInstagram } from "react-icons/io";
 import { RiTwitterXFill } from "react-icons/ri";
 import { RiLinkedinLine } from "react-icons/ri";
+import {Route} from "react-router-dom";
+import Vision from "./contentFooter/Vision";
 
 const Footer = () => {
     return (
@@ -11,26 +13,28 @@ const Footer = () => {
 
             <div className="FooterContainer">
                 <div className="About">
+
+
                     <ul>
                         <h3>About A+ Group</h3>
-                        <li> Our vision & Mission</li>
-                        <li> Contact us</li>
-                        <li> News & Updates</li>
-                        <li>  Our Story  </li>
-                        <li>    Community impact</li>
-                        <li>    Sustainability Commitment</li>
-                        <li> Awards & Recognition</li>
+                        <li><a href ={"/visiMission"} className={"aFooter"}> Our vision & Mission</a></li>
+                        <li><a href ={"/ContactUs"} className={"aFooter"}> Contact us</a></li>
+                        <li> <a href ={"/NewsUp"} className={"aFooter"}>News & Updates</a></li>
+                        <li> <a href ={"/Story"} className={"aFooter"}> Our Story  </a></li>
+                        <li> <a href ={"/Community"} className={"aFooter"}>   Community impact</a></li>
+                        <li> <a href ={"/Sustainability"} className={"aFooter"}>   Sustainability Commitment</a></li>
+                        <li><a href ={"/Awards"} className={"aFooter"}> Awards & Recognition </a></li>
                     </ul>
                 </div>
 
                 <div className="Customer">
                     <ul>
                         <h3>Customer Services</h3>
-                        <li> Return & Refund Policy</li>
-                        <li> Track Your Order</li>
-                        <li> FAQs & Help Center</li>
-                        <li>  24/7 Live Support  </li>
-                        <li>   Report an Issue</li>
+                        <li><a href={"/Return"} className={"aFooter"}>Return & Refund Policy</a></li>
+                        <li> <a href={"/Track"} className={"aFooter"}>Track Your Order</a></li>
+                        <li><a href={"/FAQs"} className={"aFooter"}> FAQs & Help Center</a></li>
+                        <li> <a href={"/LiveS"} className={"aFooter"}> 24/7 Live Support  </a></li>
+                        <li> <a href={"/Report"} className={"aFooter"}> Report an Issue </a></li>
 
                     </ul>
 
@@ -40,16 +44,84 @@ const Footer = () => {
                 <div className="Policies">
                     <ul>
                         <h3>Policies & Legal</h3>
-                        <li> Privacy Policy</li>
-                        <li> Terms of Service</li>
-                        <li> Intellectual Property</li>
-                        <li>  Security Center  </li>
+                        <li><a href={"/Privacy"} className={"aFooter"}> Privacy Policy</a></li>
+                        <li><a href={"/TermsS"} className={"aFooter"}> Terms of Service</a></li>
+                        <li><a href={"/IntellectualP"} className={"aFooter"}> Intellectual Property</a></li>
+                        <li><a href={"/SecurityC"} className={"aFooter"}>  Security Center  </a></li>
                     </ul>
 
                 </div>
 
                 <div className="Features">
+                    <ul>
                     <h3> Our Features</h3>
+                        <div className="listefooter-OurFeatures">
+                    <li ><a href={"/CardFooter"} className={"aFooter4"}><svg width="26" height="27" viewBox="0 0 26 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1H1.36325C2.00458 1 2.32581 1 2.58739 1.11872C2.81802 1.22339 3.0152 1.39191 3.15739 1.6056C3.3184 1.84758 3.37653 2.17069 3.49258 2.81566L6.41467 19.0556L20.5222 19.0556C21.1356 19.0556 21.4433 19.0556 21.6974 18.9443C21.9219 18.8461 22.1155 18.687 22.2593 18.4846C22.4218 18.2558 22.4907 17.9496 22.6284 17.3376L22.6294 17.3333L24.7536 7.88883L24.754 7.88686C24.9628 6.95855 25.0675 6.49327 24.9526 6.12831C24.8517 5.80808 24.6396 5.53659 24.3581 5.36378C24.0371 5.16667 23.5733 5.16667 22.6432 5.16667H4.38414M21.3048 26C20.5572 26 19.9512 25.3782 19.9512 24.6111C19.9512 23.844 20.5572 23.2222 21.3048 23.2222C22.0524 23.2222 22.6585 23.844 22.6585 24.6111C22.6585 25.3782 22.0524 26 21.3048 26ZM7.76828 26C7.02067 26 6.41462 25.3782 6.41462 24.6111C6.41462 23.844 7.02067 23.2222 7.76828 23.2222C8.51588 23.2222 9.12193 23.844 9.12193 24.6111C9.12193 25.3782 8.51588 26 7.76828 26Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                        Card</a></li><li className={"aFooter4"} style={{marginLeft:"48px"}}><svg width="5" height="25" viewBox="0 0 2 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <line x1="1" y1="18.0146" x2="1" y2="0.000139236" stroke="white" stroke-width="2"/>
+                        </svg></li>
+
+                            <li ><a href={"/SavesFooter"} className={"aFooter4"} ><svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <g clip-path="url(#clip0_1_6595)">
+                                    <path d="M19.8334 3.5H8.16671C6.88337 3.5 5.84504 4.55 5.84504 5.83333L5.83337 24.5L14 21L22.1667 24.5V5.83333C22.1667 4.55 21.1167 3.5 19.8334 3.5ZM19.8334 21L14 18.4567L8.16671 21V5.83333H19.8334V21Z" fill="white"/>
+                                </g>
+                                <defs>
+                                    <clipPath id="clip0_1_6595">
+                                        <rect width="28" height="28" fill="white"/>
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                                Saves  </a></li> </div>
+                            <div className="listefooter-OurFeatures">
+                    <li><a href={"/ChatFooter"} className={"aFooter4"}><svg width="27" height="23" viewBox="0 0 27 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M26 21.9999C26 19.5616 23.6811 17.4873 20.4444 16.7186M17.6667 22C17.6667 18.9072 13.9357 16.4 9.33333 16.4C4.73096 16.4 1 18.9072 1 22M17.6667 12.2C20.7349 12.2 23.2222 9.69279 23.2222 6.6C23.2222 3.50721 20.7349 1 17.6667 1M9.33333 12.2C6.26508 12.2 3.77778 9.69279 3.77778 6.6C3.77778 3.50721 6.26508 1 9.33333 1C12.4016 1 14.8889 3.50721 14.8889 6.6C14.8889 9.69279 12.4016 12.2 9.33333 12.2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                        Chat</a></li>
+                            <li className={"aFooter4"} style={{marginLeft:"83px"}}><svg width="5" height="25" viewBox="0 0 2 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="1" y1="18.0146" x2="1" y2="0.000139236" stroke="white" stroke-width="2"/>
+                    </svg></li>
+
+                                <li><a href={"/DarkModeFooter"} className={"aFooter4"}><svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M9.375 6.25004C9.375 11.4277 13.5723 15.625 18.75 15.625C19.6971 15.625 20.6115 15.485 21.4733 15.2237C20.3066 19.0732 16.7305 21.8749 12.5 21.8749C7.32233 21.8749 3.125 17.6779 3.125 12.5002C3.125 8.26966 5.92716 4.69361 9.77667 3.52686C9.51545 4.3887 9.375 5.3029 9.375 6.25004Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                </svg>Dark Mode</a></li></div><div className="listefooter-OurFeatures">
+                        <li><a href={"/CategoriesFooter"} className={"aFooter4"}> <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M6.66663 22.6668H25.3333M6.66663 16.0002H25.3333M6.66663 9.3335H25.3333" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                            Categories  </a></li><li className={"aFooter4"} ><svg width="5" height="25" viewBox="0 0 2 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <line x1="1" y1="18.0146" x2="1" y2="0.000139236" stroke="white" stroke-width="2"/>
+                    </svg></li>
+                        <li><a href={"/TrackingFooter"} className={"aFooter4"}> <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_1_6607)">
+                            <path d="M8.45829 22.9583C9.79298 22.9583 10.875 21.8764 10.875 20.5417C10.875 19.207 9.79298 18.125 8.45829 18.125C7.1236 18.125 6.04163 19.207 6.04163 20.5417C6.04163 21.8764 7.1236 22.9583 8.45829 22.9583Z" stroke="#FAFAFA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M20.5417 22.9583C21.8764 22.9583 22.9583 21.8764 22.9583 20.5417C22.9583 19.207 21.8764 18.125 20.5417 18.125C19.207 18.125 18.125 19.207 18.125 20.5417C18.125 21.8764 19.207 22.9583 20.5417 22.9583Z" stroke="#FAFAFA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M6.04163 20.542H5.62496C4.52039 20.542 3.62496 19.6466 3.62496 18.542V15.7087M2.41663 6.04199H13.7083C14.8129 6.04199 15.7083 6.93742 15.7083 8.04199V20.542M10.875 20.542H18.125M22.9583 20.542H23.375C24.4795 20.542 25.375 19.6466 25.375 18.542V13.292M25.375 13.292H15.7083M25.375 13.292L22.3326 8.22133C21.9711 7.61892 21.3201 7.25033 20.6176 7.25033H15.7083" stroke="#FAFAFA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M5.80005 20.2998H5.38338C4.27881 20.2998 3.38338 19.4044 3.38338 18.2998V15.4665M2.17505 5.7998H13.4667C14.5713 5.7998 15.4667 6.69524 15.4667 7.7998V20.2998M10.875 20.2998H17.8834M23.2 20.2998V20.2998C24.2678 20.2998 25.1334 19.4342 25.1334 18.3665V13.0498M25.1334 13.0498H15.4667M25.1334 13.0498L22.091 7.97915C21.7295 7.37674 21.0785 7.00814 20.376 7.00814H15.4667" stroke="#FAFAFA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M3.625 8.56836H8.45833" stroke="#FAFAFA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M1.31824 11.2046H6.15157" stroke="#FAFAFA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M3.625 13.8408H8.45833" stroke="#FAFAFA" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_1_6607">
+                                <rect width="29" height="29" fill="white"/>
+                            </clipPath>
+                        </defs>
+                    </svg>
+                        Tracking  </a></li>
+                    </div>
+                        <div className="listefooter-OurFeatures">
+
+                            <li><a href={"/ChatFooter"} className={"aFooter4"}  ><svg width="100" height="100" style={{position:'relative',left:"-36px",top:"-27px"}} viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M58.014 26.7172L58.9024 24H60.4463L61.3347 26.7172L64 27.6229V29.1968L61.3347 30.1025L60.4463 32.8197H58.9024L58.014 30.1025L55.3487 29.1968V27.6229L58.014 26.7172Z" fill="#FFFCFF"/>
+                                <path d="M61.0305 35.3224V45H58.3182V35.3224H61.0305Z" fill="#FFFCFF"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M46.5706 27.0273H51.0802L55.6507 45H52.8488L51.7941 40.8525H45.8567L44.8019 45H42L46.5706 27.0273ZM46.5598 38.0874H51.0909L48.9815 29.7924H48.6693L46.5598 38.0874Z" fill="#FFFCFF"/>
+                            </svg>
+
+                                <p style={{position:'relative',left:"-66px",top:"-39px"}}>Ai chat</p></a></li>
+
+                            </div>
+                    </ul>
                 </div>
             </div>
 
