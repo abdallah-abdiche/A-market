@@ -9,5 +9,5 @@ A full-stack e-commerce platform built with:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/AnisHr77/A-market.git
+   git clone  https://github.com/abdallah-abdiche/A-market.git
    cd A-market
